@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestoria Peninsular</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a href="#" class="navbar-brand mx-auto">Gestoria Peninsular</a>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mt-4 text center">
+
+        <table class="table table-striped">
+          <tr>
+            <th>Id Clientes</th>
+            <th>Asesor</th>
+            <th>Clientes</th>
+          </tr>
+
+          <% for(var i = 0; i < result.length; i++) { %>
+
+          <tr>
+            <td><%= result[i].id_clientes%></td>
+            <td><%= result[i].asesor%></td>
+            <td><%= result[i].cliente%></td>
+          </tr>
+
+          <%} %>
+
+        </table>
+      </div>
+
+      <div class="col-md-6 mt-4 card">
+        <form action="/rutas" method="post" class="card-body">
+
+          <h3 class="card-title">Agregar cliente</h3>
+
+          <div class="form-group">
+            <input id='asesor' type="text" name="asesor" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input type="text" name="cliente" class="form-control">
+          </div>
+
+          <input type="submit" class="btn btn-primary">
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    document.getElementById('asesor').focus();
+
+  </script>
+
+</body>
+
+</html>
